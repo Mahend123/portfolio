@@ -20,9 +20,12 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .nav-logo{font-family:'DM Mono',monospace;font-size:13px;color:var(--teal);letter-spacing:0.08em}
-.nav-links{display:flex;gap:2rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:0.04em;transition:color .2s}
 .nav-links a:hover{color:var(--teal)}
+.nav-social{display:flex;gap:.75rem;align-items:center;margin-left:1rem;padding-left:1rem;border-left:1px solid var(--border)}
+.nav-social a{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);text-decoration:none;background:var(--tealfade);border:1px solid rgba(0,212,170,0.2);border-radius:6px;padding:4px 10px;transition:color .2s,border-color .2s}
+.nav-social a:hover{color:var(--teal);border-color:rgba(0,212,170,0.5)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
@@ -67,6 +70,19 @@ section{padding:5rem 2rem}
 .skill-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0}
 .skill-note{margin-top:1.5rem;padding:14px 18px;background:var(--tealfade);border:1px solid rgba(0,212,170,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
 .skill-note strong{color:var(--teal)}
+.mern-block{margin-top:2.5rem;background:var(--card);border:1px solid rgba(0,212,170,0.25);border-radius:14px;padding:1.8rem;position:relative;overflow:hidden}
+.mern-block::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),#7c3aed,transparent);border-radius:14px 14px 0 0}
+.mern-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem}
+.mern-title{font-size:1rem;font-weight:600;color:#fff}
+.mern-title span{color:var(--teal)}
+.mern-badge{font-family:'DM Mono',monospace;font-size:11px;background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.3);color:var(--teal);border-radius:100px;padding:4px 14px;letter-spacing:.06em}
+.mern-desc{font-size:13px;color:var(--muted);margin-bottom:1.4rem;line-height:1.7;max-width:680px}
+.mern-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.mern-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;transition:border-color .2s}
+.mern-card:hover{border-color:rgba(0,212,170,0.35)}
+.mern-card-icon{font-size:1.4rem;margin-bottom:.4rem}
+.mern-card-name{font-size:.9rem;font-weight:600;color:#fff;margin-bottom:.2rem}
+.mern-card-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* EXPERIENCE */
 .exp-timeline{position:relative;padding-left:2rem}
@@ -118,6 +134,9 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
 .footer-inner{max-width:1100px;margin:0 auto}
 .footer-name{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#fff;margin-bottom:.5rem}
 .footer-muted{font-size:13px;color:var(--muted)}
+.footer-links{display:flex;justify-content:center;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+.footer-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;background:var(--tealfade);border:1px solid rgba(0,212,170,0.2);border-radius:6px;padding:5px 14px;transition:color .2s,border-color .2s}
+.footer-link:hover{color:var(--teal);border-color:rgba(0,212,170,0.5)}
 
 @media(max-width:768px){
 .hero-inner{grid-template-columns:1fr}
@@ -137,6 +156,11 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
+      <div class="nav-social">
+        <a href="https://mahend123.github.io/" target="_blank">🌐 Portfolio</a>
+        <a href="https://www.linkedin.com/in/mahendra-rajput-94056a175" target="_blank">💼 LinkedIn</a>
+        <a href="https://mahend123.github.io/Mahendra_Rajput.pdf" target="_blank" download>📄 Download CV</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -149,7 +173,9 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
       <div class="hero-sub">Senior PHP Developer with 7+ years building payment gateways, merchant management platforms, CRM systems, and scalable web applications.</div>
       <div class="hero-actions">
         <a href="mailto:mahendrarajput646@gmail.com" class="btn-primary">✉ Get in Touch</a>
-        <a href="tel:8871780019" class="btn-outline">📞 +91 8871780019</a>
+        <a href="https://mahend123.github.io/Mahendra_Rajput.pdf" target="_blank" download class="btn-primary" style="background:#f4c842;color:#0b0f14">📄 Download CV</a>
+        <a href="https://mahend123.github.io/" target="_blank" class="btn-outline">🌐 Portfolio</a>
+        <a href="https://www.linkedin.com/in/mahendra-rajput-94056a175" target="_blank" class="btn-outline">💼 LinkedIn</a>
       </div>
     </div>
     <div class="hero-card">
@@ -159,6 +185,9 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
       <div class="contact-item"><div class="contact-icon">✉</div><a href="mailto:mahendrarajput646@gmail.com">mahendrarajput646@gmail.com</a></div>
       <div class="contact-item"><div class="contact-icon">📞</div>+91 8871780019</div>
       <div class="contact-item"><div class="contact-icon">📍</div>Indore, MP, India</div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><a href="https://mahend123.github.io/" target="_blank">mahend123.github.io</a></div>
+      <div class="contact-item"><div class="contact-icon">💼</div><a href="https://www.linkedin.com/in/mahendra-rajput-94056a175" target="_blank">linkedin.com/in/mahendra-rajput</a></div>
+      <div class="contact-item"><div class="contact-icon">📄</div><a href="https://mahend123.github.io/Mahendra_Rajput.pdf" target="_blank" download>Download CV (PDF)</a></div>
       <div class="stat-grid">
         <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Years Exp.</div></div>
         <div class="stat"><div class="stat-num">13+</div><div class="stat-label">Projects</div></div>
@@ -190,10 +219,44 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
       <div class="skill-chip"><span class="skill-dot"></span>WHM / cPanel</div>
       <div class="skill-chip"><span class="skill-dot"></span>Domain Hosting</div>
       <div class="skill-chip"><span class="skill-dot"></span>Server Config</div>
+      <div class="skill-chip"><span class="skill-dot"></span>Server Migration</div>
       <div class="skill-chip"><span class="skill-dot"></span>Bootstrap</div>
       <div class="skill-chip"><span class="skill-dot"></span>DOMPDF / TCPDF</div>
     </div>
-    <div class="skill-note">🔍 <strong>Exploring:</strong> Basic knowledge of MongoDB, ExpressJS, ReactJS, and Node.js — actively learning modern stack technologies.</div>
+    <div class="skill-note">⚡ <strong>Also comfortable with:</strong> DOMPDF, TCPDF, PhpSpreadsheet, POSTMAN — used regularly across projects.</div>
+
+    <!-- MERN STACK BLOCK -->
+    <div class="mern-block">
+      <div class="mern-header">
+        <div class="mern-title">Also works with the <span>MERN Stack</span></div>
+        <span class="mern-badge">✦ Intermediate Level</span>
+      </div>
+      <div class="mern-desc">
+        Beyond PHP, I have hands-on intermediate experience with the MERN stack — built real projects covering REST APIs with Node/Express, dynamic UIs with React, and NoSQL data modelling with MongoDB. Actively deepening this skillset to take on full-stack modern projects.
+      </div>
+      <div class="mern-cards">
+        <div class="mern-card">
+          <div class="mern-card-icon">🍃</div>
+          <div class="mern-card-name">MongoDB</div>
+          <div class="mern-card-desc">NoSQL database design, collections, aggregation pipelines, and Mongoose ODM</div>
+        </div>
+        <div class="mern-card">
+          <div class="mern-card-icon">⚙️</div>
+          <div class="mern-card-name">Express.js</div>
+          <div class="mern-card-desc">REST API development, routing, middleware, authentication with JWT</div>
+        </div>
+        <div class="mern-card">
+          <div class="mern-card-icon">⚛️</div>
+          <div class="mern-card-name">React.js</div>
+          <div class="mern-card-desc">Component-based UIs, hooks (useState, useEffect), props, and state management</div>
+        </div>
+        <div class="mern-card">
+          <div class="mern-card-icon">🟢</div>
+          <div class="mern-card-name">Node.js</div>
+          <div class="mern-card-desc">Server-side JavaScript, npm ecosystem, async/await, and event-driven architecture</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -216,6 +279,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
           <li>Integrate payment gateways and third-party APIs for secure transaction processing.</li>
           <li>Optimize database queries and application performance at scale.</li>
           <li>Deploy and manage applications via WHM/cPanel including domain hosting and server configuration.</li>
+          <li>Handle server migrations — transferring websites, databases, and configurations across hosting environments with zero downtime.</li>
           <li>Monitor production servers, handle deployments, and troubleshoot live systems.</li>
         </ul>
       </div>
@@ -324,15 +388,13 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
         </div>
       </div>
 
-
-
       <div class="proj-card">
         <div class="proj-num">07 · Payment Guru</div>
         <div class="proj-name">Merchant Lead & Payment CRM</div>
         <div class="proj-desc">Payment management system for high-risk merchants with transaction tracking, settlements, chargeback management, and multi-gateway support.</div>
         <div class="proj-links">
           <a class="proj-link" href="https://payment-guru.com/" target="_blank">🌐 Landing</a>
-          <a class="proj-link" href="https://app.payment-guru.com/" target="_blank">🖥 Landing</a>
+          <a class="proj-link" href="https://app.payment-guru.com/" target="_blank">🖥 App</a>
           <a class="proj-link" href="https://app.payment-guru.com/login" target="_blank">📱 Portal</a>
         </div>
         <div class="tech-tags">
@@ -340,15 +402,13 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
         </div>
       </div>
 
-      
       <div class="proj-card">
-        <div class="proj-num">08· Leo Processing</div>
+        <div class="proj-num">08 · Leo Processing</div>
         <div class="proj-name">Merchant Lead & Payment CRM</div>
         <div class="proj-desc">Merchant lead generation and payment processing platform with real-time transaction monitoring, multi-currency support, and recurring billing.</div>
         <div class="proj-links">
           <a class="proj-link" href="https://leoprocessing.com/" target="_blank">🌐 Landing</a>
           <a class="proj-link" href="https://leoprocessing.com/login" target="_blank">🖥 CRM</a>
-          <a class="proj-link" href="https://leoprocessing.com/login" target="_blank">👤 Client</a>
         </div>
         <div class="tech-tags">
           <span class="tech-tag">PHP</span><span class="tech-tag">CodeIgniter</span><span class="tech-tag">ACH</span><span class="tech-tag">eCheck</span><span class="tech-tag">REST APIs</span>
@@ -357,7 +417,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
 
       <div class="proj-card">
         <div class="proj-num">09 · Aspire Innovate</div>
-        <div class="proj-name">Real estate property management</div>
+        <div class="proj-name">Real Estate Property Management</div>
         <div class="proj-desc">Real estate property management platform with dynamic listings, CRM for lead management, advanced search filters, and SEO-friendly architecture.</div>
         <div class="proj-links">
           <a class="proj-link" href="https://aspireinnove.com/" target="_blank">🌐 Landing</a>
@@ -369,19 +429,15 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
         </div>
       </div>
 
-
     </div>
 
     <div style="margin-top:3rem">
       <div class="sec-label" style="margin-bottom:1.5rem">// OTHER PROJECTS</div>
       <div class="other-grid">
-
-        
         <div class="other-card"><div class="other-name">Retail POS Machine</div><div class="other-desc">Retail POS solutions platform with EMV, NFC, contactless payment, and mobile wallet integrations.</div></div>
         <div class="other-card"><div class="other-name">eCheck Processings</div><div class="other-desc">eCheck/ACH payment processing platform with recurring billing and virtual terminal management.</div></div>
         <div class="other-card"><div class="other-name">Kratom Gateways</div><div class="other-desc">High-risk merchant payment platform supporting crypto, ACH, eCheck, and credit card processing.</div></div>
         <div class="other-card"><div class="other-name">Cerberus Payments</div><div class="other-desc">Payment gateway platform with digital wallets, online banking, and international payment methods.</div></div>
-        
         <div class="other-card"><div class="other-name">Tirupati News</div><div class="other-desc">News portal with CMS and admin panel for content management and publishing.</div></div>
         <div class="other-card"><div class="other-name">ChargeBackExpertz</div><div class="other-desc">Chargeback dispute management platform for tracking and handling merchant disputes.</div></div>
         <div class="other-card"><div class="other-name">ChargeBackAnalyst</div><div class="other-desc">Analytics dashboard for monitoring chargeback data and performance reports.</div></div>
@@ -404,12 +460,12 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
       <div class="edu-card">
         <div class="edu-degree">12th — Higher Secondary</div>
         <div class="edu-school">Sharda Vidhya Mandir H.S. Nasrullaganj</div>
-        <div class="edu-meta">Sehore, MP · March 2011 · PIN 466331</div>
+        <div class="edu-meta">Sehore, MP · March 2011</div>
       </div>
       <div class="edu-card">
         <div class="edu-degree">10th — Secondary School</div>
         <div class="edu-school">Sharda Vidhya Mandir H.S. Nasrullaganj</div>
-        <div class="edu-meta">Sehore, MP · July–Aug 2009 · PIN 466331</div>
+        <div class="edu-meta">Sehore, MP · 2009</div>
       </div>
     </div>
   </div>
@@ -419,14 +475,14 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
   <div class="sec-inner">
     <div class="sec-label">// CONTACT</div>
     <div class="sec-title">Get In Touch</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem;max-width:700px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem;max-width:900px">
       <div class="edu-card" style="display:flex;align-items:center;gap:1rem">
         <div class="contact-icon" style="width:42px;height:42px;font-size:18px">✉</div>
         <div><div style="font-size:12px;color:var(--muted);margin-bottom:2px">Email</div><a href="mailto:mahendrarajput646@gmail.com" style="color:var(--teal);font-size:13px;text-decoration:none">mahendrarajput646@gmail.com</a></div>
       </div>
       <div class="edu-card" style="display:flex;align-items:center;gap:1rem">
         <div class="contact-icon" style="width:42px;height:42px;font-size:18px">📞</div>
-        <div><div style="font-size:12px;color:var(--muted);margin-bottom:2px">Phone</div><a href="tel:8871780019" style="color:var(--teal);font-size:13px;text-decoration:none">+91 8871780019</a></div>
+        <div><div style="font-size:12px;color:var(--muted);margin-bottom:2px">Phone</div><a href="tel:+918871780019" style="color:var(--teal);font-size:13px;text-decoration:none">+91 8871780019</a></div>
       </div>
       <div class="edu-card" style="display:flex;align-items:center;gap:1rem">
         <div class="contact-icon" style="width:42px;height:42px;font-size:18px">📍</div>
@@ -434,6 +490,14 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
       </div>
       <div class="edu-card" style="display:flex;align-items:center;gap:1rem">
         <div class="contact-icon" style="width:42px;height:42px;font-size:18px">🌐</div>
+        <div><div style="font-size:12px;color:var(--muted);margin-bottom:2px">Portfolio</div><a href="https://mahend123.github.io/" target="_blank" style="color:var(--teal);font-size:13px;text-decoration:none">mahend123.github.io</a></div>
+      </div>
+      <div class="edu-card" style="display:flex;align-items:center;gap:1rem">
+        <div class="contact-icon" style="width:42px;height:42px;font-size:18px">💼</div>
+        <div><div style="font-size:12px;color:var(--muted);margin-bottom:2px">LinkedIn</div><a href="https://www.linkedin.com/in/mahendra-rajput-94056a175" target="_blank" style="color:var(--teal);font-size:13px;text-decoration:none">linkedin.com/in/mahendra-rajput</a></div>
+      </div>
+      <div class="edu-card" style="display:flex;align-items:center;gap:1rem">
+        <div class="contact-icon" style="width:42px;height:42px;font-size:18px">🗣</div>
         <div><div style="font-size:12px;color:var(--muted);margin-bottom:2px">Languages</div><span style="color:var(--text);font-size:13px">Hindi (Native) · English (Professional)</span></div>
       </div>
     </div>
@@ -444,9 +508,15 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:2.5rem 2
   <div class="footer-inner">
     <div class="footer-name">Mahendra Rajput</div>
     <div class="footer-muted">Senior PHP Developer · Indore, India · Open to opportunities</div>
+    <div class="footer-links">
+      <a href="https://mahend123.github.io/Mahendra_Rajput.pdf" target="_blank" download class="footer-link">📄 Download CV</a>
+      <a href="https://mahend123.github.io/" target="_blank" class="footer-link">🌐 Portfolio</a>
+      <a href="https://www.linkedin.com/in/mahendra-rajput-94056a175" target="_blank" class="footer-link">💼 LinkedIn</a>
+      <a href="mailto:mahendrarajput646@gmail.com" class="footer-link">✉ Email</a>
+      <a href="tel:+918871780019" class="footer-link">📞 Call</a>
+    </div>
     <div style="margin-top:1rem;font-size:12px;color:var(--muted);opacity:.5">Built with care · 2026</div>
   </div>
 </footer>
-
 </body>
 </html>
